@@ -6,7 +6,12 @@ using namespace std;
 * TODO: Complete the PID class.
 */
 
-PID::PID() {}
+PID::PID()
+{
+    dp[0] = 1;
+    dp[1] = 1;
+    dp[2] = 1;
+}
 
 PID::~PID() {}
 
@@ -30,22 +35,30 @@ double PID::TotalError() {
     return this->Kp*this->p_error - this->Ki*this->i_error - this->Kd*this->d_error;
 }
 
-#if 0
-void PID::Twiddle(double f_tol = 0.2) {
+void PID::Twiddle(double f_tol, double err) {
+
     double *p[3];
-    double dp[3] = {1,1,1};
 
-    p[0] = &this->p_error;
-    p[1] = &this->i_error;
-    p[2] = &this->d_error;
-
+    p[0] = &this->Kp;
+    p[1] = &this->Ki;
+    p[2] = &this->Kd;
+    double best_error = err;
     while ((dp[0]+dp[1]+dp[2]) > f_tol)
     {
         for (int i=0; i<3; i++)
         {
             *p[i] += dp[i];
-
+            if (err < best_error)
+            {
+                best_error = err;
+                dp[i] *= 1.1;
+            }
+            else
+            {
+                *p[i] += dp[i];
+                dp[i] *= 0.9;
+            }
         }
     }
 }
-#endif
+

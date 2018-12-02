@@ -16,7 +16,7 @@ public:
   double Kp;
   double Ki;
   double Kd;
-
+  double dp[3];
   /*
   * Constructor
   */
@@ -41,12 +41,11 @@ public:
   * Calculate the total PID error.
   */
   double TotalError();
-#if 0
+
   /*
   * Calculate the param values using Twiddle.
   */
-  void Twiddle(double);
-#endif
+  void Twiddle(double, double);
 };
 
 #endif /* PID_H */
