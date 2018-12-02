@@ -41,6 +41,12 @@ public:
   * Calculate the total PID error.
   */
   double TotalError();
+#if 0
+  /*
+  * Calculate the param values using Twiddle.
+  */
+  void Twiddle(double);
+#endif
 };
 
 #endif /* PID_H */
