@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/sandeep/workspace/udacity/term2/CarND-T2-P4-PID/build",
+  "command": "/usr/bin/g++-7   -I/usr/local/include  -Wall -g   -std=c++11 -o CMakeFiles/pid.dir/src/PID.cpp.o -c /home/sandeep/workspace/udacity/term2/CarND-T2-P4-PID/src/PID.cpp",
+  "file": "/home/sandeep/workspace/udacity/term2/CarND-T2-P4-PID/src/PID.cpp"
+},
+{
+  "directory": "/home/sandeep/workspace/udacity/term2/CarND-T2-P4-PID/build",
+  "command": "/usr/bin/g++-7   -I/usr/local/include  -Wall -g   -std=c++11 -o CMakeFiles/pid.dir/src/main.cpp.o -c /home/sandeep/workspace/udacity/term2/CarND-T2-P4-PID/src/main.cpp",
+  "file": "/home/sandeep/workspace/udacity/term2/CarND-T2-P4-PID/src/main.cpp"
+}
+]
