@@ -15,10 +15,10 @@ PID::PID()
 
 PID::~PID() {}
 
-void PID::Init(double Kp, double Ki, double Kd) {
-    this->Kp = Kp;
-    this->Ki = Ki;
-    this->Kd = Kd;
+void PID::Init(double f_Kp, double f_Ki, double f_Kd) {
+    this->Kp = f_Kp;
+    this->Ki = f_Ki;
+    this->Kd = f_Kd;
 
     this->p_error = 0;
     this->i_error = 0;
@@ -32,7 +32,7 @@ void PID::UpdateError(double cte) {
 }
 
 double PID::TotalError() {
-    return this->Kp*this->p_error - this->Ki*this->i_error - this->Kd*this->d_error;
+    return -Kp*p_error - Ki*i_error - Kd*d_error;
 }
 
 void PID::Twiddle(double f_tol, double err) {
@@ -61,4 +61,3 @@ void PID::Twiddle(double f_tol, double err) {
         }
     }
 }
-
