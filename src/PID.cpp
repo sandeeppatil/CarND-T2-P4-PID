@@ -8,9 +8,9 @@ using namespace std;
 
 PID::PID()
 {
-    dp[0] = 0;
-    dp[1] = 0;
-    dp[2] = 0;
+    dp[0] = 1;
+    dp[1] = 1;
+    dp[2] = 1;
 }
 
 PID::~PID() {}
